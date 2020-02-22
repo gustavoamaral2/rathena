@@ -387,6 +387,7 @@
 	/* sex */
 	export_constant(SEX_FEMALE);
 	export_constant(SEX_MALE);
+	export_constant(SEX_BOTH);
 
 	/* broadcasts */
 	export_constant(BC_ALL);
@@ -802,6 +803,13 @@
 	export_constant(EQP_SHADOW_ACC_L);
 	export_constant(EQP_ACC_RL);
 	export_constant(EQP_SHADOW_ACC_RL);
+
+	export_constant2("EQP_Right_Hand", EQP_HAND_R);
+	export_constant2("EQP_Left_Hand", EQP_HAND_L);
+	export_constant2("EQP_Right_Accessory", EQP_ACC_R);
+	export_constant2("EQP_Left_Accessory", EQP_ACC_L);
+	export_constant2("EQP_Shadow_Right_Accessory", EQP_SHADOW_ACC_R);
+	export_constant2("EQP_Shadow_Left_Accessory", EQP_SHADOW_ACC_L);
 
 	/* looks */
 	export_constant(LOOK_BASE);
@@ -3870,15 +3878,27 @@
 	export_constant(MAX_WEAPON_TYPE_ALL);
 
 	/* ammunition types */
-	export_constant(A_ARROW);
-	export_constant(A_DAGGER);
-	export_constant(A_BULLET);
-	export_constant(A_SHELL);
-	export_constant(A_GRENADE);
-	export_constant(A_SHURIKEN);
-	export_constant(A_KUNAI);
-	export_constant(A_CANNONBALL);
-	export_constant(A_THROWWEAPON);
+	/* Send deprecation notice and temporarily replace with new constant value. */
+	export_deprecated_constant3("A_ARROW", AMMO_ARROW, "AMMO_ARROW");
+	export_deprecated_constant3("A_DAGGER", AMMO_DAGGER, "AMMO_DAGGER");
+	export_deprecated_constant3("A_BULLET", AMMO_BULLET, "AMMO_BULLET");
+	export_deprecated_constant3("A_SHELL", AMMO_SHELL, "AMMO_SHELL");
+	export_deprecated_constant3("A_GRENADE", AMMO_GRENADE, "AMMO_GRENADE");
+	export_deprecated_constant3("A_SHURIKEN", AMMO_SHURIKEN, "AMMO_SHURIKEN");
+	export_deprecated_constant3("A_KUNAI", AMMO_KUNAI, "AMMO_KUNAI");
+	export_deprecated_constant3("A_CANNONBALL", AMMO_CANNONBALL, "AMMO_CANNONBALL");
+	export_deprecated_constant3("A_THROWWEAPON", AMMO_THROWWEAPON, "AMMO_THROWWEAPON");
+
+	export_constant(AMMO_ARROW);
+	export_constant(AMMO_DAGGER);
+	export_constant(AMMO_BULLET);
+	export_constant(AMMO_SHELL);
+	export_constant(AMMO_GRENADE);
+	export_constant(AMMO_SHURIKEN);
+	export_constant(AMMO_KUNAI);
+	export_constant(AMMO_CANNONBALL);
+	export_constant(AMMO_THROWWEAPON);
+	export_constant(MAX_AMMO_TYPE);
 
 	/* monsterinfo types */
 	export_constant(MOB_NAME);
@@ -7702,6 +7722,24 @@
 	export_constant(BG_INFO_MAX_LEVEL);
 	export_constant(BG_INFO_MAPS);
 	export_constant(BG_INFO_DESERTER_TIME);
+
+	/* item job classes */
+	export_constant2("ITEMJ_Normal", ITEMJ_NORMAL);
+	export_constant2("ITEMJ_High", ITEMJ_UPPER);
+	export_constant2("ITEMJ_Baby", ITEMJ_BABY);
+	export_constant2("ITEMJ_Third", ITEMJ_THIRD);
+	export_constant2("ITEMJ_Third_High", ITEMJ_THIRD_UPPER);
+	export_constant2("ITEMJ_Third_Baby", ITEMJ_THIRD_BABY);
+
+	/* item drop effects */
+	export_constant(DROPEFFECT_NONE);
+	export_constant(DROPEFFECT_CLIENT);
+	export_constant(DROPEFFECT_WHITE_PILLAR);
+	export_constant(DROPEFFECT_BLUE_PILLAR);
+	export_constant(DROPEFFECT_YELLOW_PILLAR);
+	export_constant(DROPEFFECT_PURPLE_PILLAR);
+	export_constant(DROPEFFECT_ORANGE_PILLAR);
+	export_constant(DROPEFFECT_MAX);
 
 	#undef export_constant
 	#undef export_constant2
